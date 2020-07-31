@@ -1,5 +1,7 @@
 const express = require('express')
-const { createProxyMiddleware } = require('http-proxy-middleware')
+const {
+  createProxyMiddleware
+} = require('http-proxy-middleware')
 const cors = require('cors')
 const config = require('./config')
 
@@ -13,10 +15,10 @@ app.use(
   })
 )
 
-app.listen(config.proxyServer.port, error => {
+app.listen(config.devServer.proxy, error => {
   if (error) {
     console.error(error)
     return
   }
-  console.info(`✔️  Server start on ${config.proxyServer.port}`)
+  console.info(`✔️  Server start on ${config.devServer.proxy}`)
 })

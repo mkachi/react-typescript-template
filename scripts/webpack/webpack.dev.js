@@ -13,10 +13,12 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 const getPlugins = () => {
   const plugins = []
-  const analyzer = config.useAnalyzer ? new BundleAnalyzerPlugin({
-    analyzerHost: config.analyzer.host,
-    analyzerPort: config.analyzer.port
-  }) : null
+  const analyzer = config.useAnalyzer ?
+    new BundleAnalyzerPlugin({
+      analyzerHost: config.analyzer.host,
+      analyzerPort: config.analyzer.port
+    }) :
+    null
 
   if (analyzer != null) {
     plugins.push(analyzer)
@@ -24,7 +26,7 @@ const getPlugins = () => {
 
   plugins.push(
     new HtmlWebpackPlugin({
-      template: `${config.src}/index.html`,
+      template: config.usePWA ? `${config.public}/pwa.html` : `${config.public}/index.html`,
       filename: './index.html'
     })
   )

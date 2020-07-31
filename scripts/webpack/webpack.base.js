@@ -6,6 +6,7 @@ const {
   CleanWebpackPlugin
 } = require('clean-webpack-plugin')
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 const eslintRule = () => ({
   test: /\.(js|jsx|ts|tsx)$/,
@@ -17,6 +18,29 @@ const eslintRule = () => ({
     emitWarning: !config.showLintError
   }
 })
+
+const copyRule = () => {
+  const result = [{
+    from: `${config.public}/favicon.ico`,
+    to: 'favicon.ico'
+  }, {
+    from: `${config.public}/manifest.json`,
+    to: 'manifest.json'
+  }, {
+    from: `${config.public}/robots.txt`,
+    to: 'robots.txt'
+  }]
+
+  if (config.usePWA) {
+    result.push({
+      from: `${config.public}/pwa.js`,
+      to: 'pwa.js'
+    })
+  }
+
+  return result
+}
+
 
 module.exports = {
   entry: {
@@ -105,6 +129,9 @@ module.exports = {
     new FriendlyErrorsWebpackPlugin(),
     new CleanWebpackPlugin({
       cleanAfterEveryBuildPatterns: ['build']
+    }),
+    new CopyWebpackPlugin({
+      patterns: copyRule()
     })
   ]
 }
