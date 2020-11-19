@@ -45,7 +45,7 @@ const copyRule = () => {
 module.exports = {
   entry: {
     vendor: ['react', 'react-dom'],
-    app: `${config.src}/App.tsx`
+    app: [ '@babel/polyfill', `${config.src}/App.tsx`]
   },
   output: {
     path: config.out,
