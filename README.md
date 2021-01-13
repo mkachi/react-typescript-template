@@ -1,4 +1,4 @@
-# mkachi-react-typescript-template
+# react-typescript-template
 My react-typescript project template
 
 ## Scripts
