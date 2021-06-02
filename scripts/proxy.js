@@ -1,13 +1,12 @@
 const express = require('express')
-const {
-  createProxyMiddleware
-} = require('http-proxy-middleware')
 const cors = require('cors')
+
 const config = require('./config')
+const { createProxyMiddleware } = require('http-proxy-middleware')
 
 const app = express()
-
 app.use(cors())
+
 app.use(
   createProxyMiddleware('/', {
     target: `http://${config.devServer.host}:${config.devServer.port}`,

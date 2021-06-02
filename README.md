@@ -17,14 +17,24 @@ My react-typescript project template
 * **out** : build result directory path
 * **assets** : assets directory path
 * **public** : public directory path
-* **useLint** : if useLint is true, Check the eslint rules
-* **useAnalyzer** : if useAnalyzer is true, Visualize the capacity of the bundle
-* **usePWA** : if usePWA is true, Apply settings required for pwa
-* **showLintError** : if showLintError is true, Show errors in eslint
+* **showLintError** : Whether to show errors according to eslint rules
+* **useLint** : Whether eslint rules are checked
+* **useAnalyzer** : Whether to use bundle size visualization in development
+* **useAnalyzerReport** : Whether to use bundle reports in production builds
+* **usePWA** : Whether to use PWA settings
+* **useCompression** : Whether to use gzip compression
+* **extractCSS** : Use separate css file
+* **copyAssets** : List of files to be copied from public folder to build folder
+* **`assets`**
+  * **imageLimit** : image bundle size limit
+  * **fontLimit** : font bundle size limit
+  * **videoLimit** : video bundle size limit
+  * **audioLimit** : audio bundle size limit
 * **`devServer`**
   * **host** : development server host
   * **port** : development server port
   * **proxy** : development server proxy port
+  * **open** : open development server
 * **`analyzer`**
   * **host** : analyzer page server host
   * **port** : analyzer page server port
