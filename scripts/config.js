@@ -40,5 +40,10 @@ module.exports = {
   analyzer: {
     host: 'localhost',
     port: 9002
+  },
+
+  // Path alias, Also define it in your tsconfig.json > compilerOptions > paths
+  alias: {
+    '@': path.resolve(__dirname, '../src')
   }
 }

@@ -4,9 +4,7 @@
     "lib": ["ES2015", "ES6", "ESNext", "DOM"],
     "baseUrl": "./",
     "paths": {
-      "assets/*": ["src/assets/*"],
-      "components/*": ["src/components/*"],
-      "containers/*": ["src/containers/*"]
+      "@/*": ["src/*"]
     },
     "allowJs": true,
     "sourceMap": true,

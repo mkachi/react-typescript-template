@@ -38,3 +38,4 @@ My react-typescript project template
 * **`analyzer`**
   * **host** : analyzer page server host
   * **port** : analyzer page server port
+* **`alias`** : path alias, Also define it in your `tsconfig.json > compilerOptions > paths`

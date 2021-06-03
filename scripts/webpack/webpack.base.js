@@ -95,7 +95,8 @@ module.exports = {
     publicPath: './'
   },
   resolve: {
-    extensions: ['.js', '.jsx', '.ts', '.tsx']
+    extensions: ['.js', '.jsx', '.ts', '.tsx'],
+    alias: config.alias
   },
   module: {
     rules: [
