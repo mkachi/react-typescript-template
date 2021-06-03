@@ -15,10 +15,5 @@
 html,
 body {
   background-color: #ffffff;
-  height: 100vh;
-}
-
-svg {
-  display: flex;
-  margin: auto;
+  height: 100%;
 }
