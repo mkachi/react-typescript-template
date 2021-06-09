@@ -19,7 +19,7 @@ module.exports = {
 
   // Production
   usePWA: false,
-  useCompression: true,
+  useCompression: false,
   extractCSS: false,
   copyAssets: ['robots.txt', 'sitemap.xml'],
   assets: {
