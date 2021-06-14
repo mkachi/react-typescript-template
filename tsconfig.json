@@ -4,7 +4,10 @@
     "lib": ["ES2015", "ES6", "ESNext", "DOM"],
     "baseUrl": "./",
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": ["src/*"],
+      "@components/*": ["src/components/*"],
+      "@hooks/*": ["src/hooks/*"],
+      "@assets/*": ["src/assets/*"],
     },
     "allowJs": true,
     "sourceMap": true,
