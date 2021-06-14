@@ -5,6 +5,7 @@ const config = require('../config')
 const { merge } = require('webpack-merge')
 const base = require('./webpack.base')
 
+const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin')
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
@@ -13,7 +14,8 @@ const getPlugins = () => {
     new HtmlWebpackPlugin({
       template: config.usePWA ? `${config.public}/pwa.html` : `${config.public}/index.html`,
       filename: './index.html'
-    })
+    }),
+    new ReactRefreshWebpackPlugin()
   ]
   const analyzer = config.useAnalyzer
     ? new BundleAnalyzerPlugin({
@@ -30,6 +32,7 @@ const getPlugins = () => {
 
 module.exports = merge(base, {
   mode: 'development',
+  target: 'web',
   devtool: 'source-map',
   devServer: {
     publicPath: '/',
@@ -37,6 +40,11 @@ module.exports = merge(base, {
     host: config.devServer.host,
     port: config.devServer.port,
     open: config.devServer.open
+  },
+  optimization: {
+    runtimeChunk: {
+      name: 'runtime'
+    }
   },
   plugins: getPlugins()
 })

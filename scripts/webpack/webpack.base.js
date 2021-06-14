@@ -85,6 +85,7 @@ const getPlugins = () => {
 }
 
 module.exports = {
+  context: __dirname,
   entry: {
     vendor: ['react', 'react-dom'],
     main: [`${config.src}/App.tsx`]

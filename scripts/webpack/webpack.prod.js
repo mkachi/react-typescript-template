@@ -61,6 +61,7 @@ const getPlugins = () => {
 
 module.exports = merge(base, {
   mode: 'production',
+  target: ['web', 'es5'],
   optimization: {
     minimize: true,
     concatenateModules: true,
