@@ -4,15 +4,17 @@
       "targets": {
         "browsers": [
           "last 2 versions",
-          ">= 5% in KR"
+          ">= 5% in KR",
+          "not ie < 9"
           ]
-      }
+      },
+      "useBuiltIns": "usage",
+      "corejs": 3,
+      "debug": false,
+      "shippedProposals": true
     }
   ] ,
     "@babel/preset-react",
     "@babel/preset-typescript"
-  ],
-  "plugins": [[
-    "@babel/plugin-transform-runtime", { "corejs": 3 }
-  ]]
+  ]
 }
